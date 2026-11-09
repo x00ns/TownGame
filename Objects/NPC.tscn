@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cef8745hkwcw1"]
+
+[ext_resource type="PackedScene" uid="uid://3ky3n6pa0is8" path="res://Objects/Character.tscn" id="1_eymd0"]
+
+[node name="Character" unique_id=810117713 instance=ExtResource("1_eymd0")]
+
+[node name="Model" type="MeshInstance3D" parent="Moneyken" parent_id_path=PackedInt32Array(1806020318) index="0" unique_id=836709785]
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." index="2" unique_id=1313472781]
+
+[node name="AIUpdateImer" type="Timer" parent="." index="3" unique_id=1726125550]
+wait_time = 0.3
+
+[node name="Mood" type="Node" parent="CharacterState" parent_id_path=PackedInt32Array(1567274131) index="1" unique_id=1651688448]
+
+[node name="Calm" type="Node" parent="CharacterState/Mood" index="0" unique_id=364218171]
+
+[node name="Happy" type="Node" parent="CharacterState/Mood" index="1" unique_id=1606513985]
+
+[node name="Sad" type="Node" parent="CharacterState/Mood" index="2" unique_id=629343767]
+
+[node name="Boring" type="Node" parent="CharacterState/Mood" index="3" unique_id=831761728]
+
+[node name="Angry" type="Node" parent="CharacterState/Mood" index="4" unique_id=731841027]
+
+[node name="Scared" type="Node" parent="CharacterState/Mood" index="5" unique_id=1686370959]

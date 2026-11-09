@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://iaap41xrrgv5"]
+
+[ext_resource type="PackedScene" uid="uid://3ky3n6pa0is8" path="res://Objects/Character.tscn" id="1_xhfnw"]
+[ext_resource type="Script" uid="uid://b37nmec406got" path="res://Scripts/Player.gd" id="2_n6db0"]
+
+[node name="Player" unique_id=810117713 instance=ExtResource("1_xhfnw")]
+script = ExtResource("2_n6db0")
+MOUSE_SENSITIVITY = 0.1
+
+[node name="Model" type="MeshInstance3D" parent="Moneyken" parent_id_path=PackedInt32Array(1806020318) index="0" unique_id=427186635]
+
+[node name="Camera3D" type="Camera3D" parent="." index="2" unique_id=1399626155]
+transform = Transform3D(1, 0, 0, 0, 0.9063078, 0.4226183, 0, -0.4226183, 0.9063078, 0.5, 1, 1.8)

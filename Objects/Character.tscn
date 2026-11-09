@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://3ky3n6pa0is8"]
+
+[ext_resource type="Script" uid="uid://drt2vsx5ckujo" path="res://Scripts/Walking.gd" id="1_84666"]
+[ext_resource type="Script" uid="uid://3xhljs0m58f5" path="res://Scripts/Character.gd" id="1_oolk3"]
+[ext_resource type="Script" uid="uid://bdc757rxi4131" path="res://Scripts/Idle.gd" id="1_w7tjs"]
+[ext_resource type="Script" uid="uid://cqpwydhe7lwc4" path="res://Scripts/StateMachine.gd" id="2_egm7h"]
+[ext_resource type="Script" uid="uid://cv8yxf7h3idwv" path="res://Scripts/Moving.gd" id="3_766v2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g7b7a"]
+radius = 0.55
+height = 1.8
+
+[node name="Character" type="CharacterBody3D" unique_id=810117713]
+script = ExtResource("1_oolk3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=385120880]
+shape = SubResource("CapsuleShape3D_g7b7a")
+
+[node name="Moneyken" type="Node3D" parent="." unique_id=1806020318]
+
+[node name="Skeleton3D" type="Skeleton3D" parent="Moneyken" unique_id=954252863]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Moneyken" unique_id=1771211668]
+
+[node name="CharacterState" type="Node" parent="." unique_id=1567274131 node_paths=PackedStringArray("intial_state")]
+script = ExtResource("2_egm7h")
+intial_state = NodePath("Moving/Idle")
+
+[node name="Moving" type="Node" parent="CharacterState" unique_id=1750972986]
+script = ExtResource("3_766v2")
+
+[node name="Idle" type="Node" parent="CharacterState/Moving" unique_id=1520805672]
+script = ExtResource("1_w7tjs")
+
+[node name="Walking" type="Node" parent="CharacterState/Moving" unique_id=708670045]
+script = ExtResource("1_84666")
+
+[node name="Running" type="Node" parent="CharacterState/Moving" unique_id=976569312]
+
+[node name="Jumping" type="Node" parent="CharacterState/Moving" unique_id=1405513022]
+
+[node name="Boxing" type="Node" parent="CharacterState/Moving" unique_id=215253641]
